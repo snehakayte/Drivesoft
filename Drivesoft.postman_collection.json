@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "5b3e97a8-0fb0-4b49-b24c-4a9c0b593e67",
+		"name": "Drivesoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7171019"
+	},
+	"item": [
+		{
+			"name": "GetAccount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://idms.dealersocket.com/api/Account/GetAccount?Token=F987AAF9-CDF3-49C2-9835-45B7E7892223&AccountNumber=891188",
+					"protocol": "https",
+					"host": [
+						"idms",
+						"dealersocket",
+						"com"
+					],
+					"path": [
+						"api",
+						"Account",
+						"GetAccount"
+					],
+					"query": [
+						{
+							"key": "Token",
+							"value": "F987AAF9-CDF3-49C2-9835-45B7E7892223"
+						},
+						{
+							"key": "AccountNumber",
+							"value": "891188"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserAuthorizationToken",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://idms.dealersocket.com/api/authenticate/GetUserAuthorizationToken?username=testerAPI@drivesoft.tech&password=HelloVIaCST3st@@Main&InstitutionID=107007",
+					"protocol": "https",
+					"host": [
+						"idms",
+						"dealersocket",
+						"com"
+					],
+					"path": [
+						"api",
+						"authenticate",
+						"GetUserAuthorizationToken"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "testerAPI@drivesoft.tech"
+						},
+						{
+							"key": "password",
+							"value": "HelloVIaCST3st@@Main"
+						},
+						{
+							"key": "InstitutionID",
+							"value": "107007"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAccountList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://idms.dealersocket.com/api/account/GetAccountList?Token=4A82AFC1-FE13-4C1D-8B07-7F83EA3B256B&LayoutID=2006084&AccountStatus=a&InstitutionID=107007&PageNumber=1",
+					"protocol": "https",
+					"host": [
+						"idms",
+						"dealersocket",
+						"com"
+					],
+					"path": [
+						"api",
+						"account",
+						"GetAccountList"
+					],
+					"query": [
+						{
+							"key": "Token",
+							"value": "4A82AFC1-FE13-4C1D-8B07-7F83EA3B256B"
+						},
+						{
+							"key": "LayoutID",
+							"value": "2006084"
+						},
+						{
+							"key": "AccountStatus",
+							"value": "a"
+						},
+						{
+							"key": "InstitutionID",
+							"value": "107007"
+						},
+						{
+							"key": "PageNumber",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "populateData",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczMzMyMTU1NiwiZXhwIjoxNzMzMzI0NTU2fQ.cnOKgnFs4fkMWU7tAJlOCK-fhiHlBnm5xUhw_FtBb2g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"layoutID\": \"2006084\",\r\n    \"accountStatus\": \"a\",\r\n    \"institutionID\": \"107007\",\r\n    \"pageNumber\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/accounts/populateData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"accounts",
+						"populateData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchpopulatedData",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczMzMyMTU1NiwiZXhwIjoxNzMzMzI0NTU2fQ.cnOKgnFs4fkMWU7tAJlOCK-fhiHlBnm5xUhw_FtBb2g",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/accounts/fetchpopulatedData?jwtToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczMzMxNDAyOSwiZXhwIjoxNzMzMzE3NjI5fQ.xBih9bHwqi1xBVQQa2XWqZSrG_k5AiTiGFqO2aDkHzU",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"accounts",
+						"fetchpopulatedData"
+					],
+					"query": [
+						{
+							"key": "jwtToken",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczMzMxNDAyOSwiZXhwIjoxNzMzMzE3NjI5fQ.xBih9bHwqi1xBVQQa2XWqZSrG_k5AiTiGFqO2aDkHzU"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth?username=admin&password=DriveSoft@@!",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin"
+						},
+						{
+							"key": "password",
+							"value": "DriveSoft@@!"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
